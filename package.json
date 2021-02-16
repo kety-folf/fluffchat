@@ -1,0 +1,23 @@
+{
+  "name": "fluffchat",
+  "version": "1.0.0",
+  "description": "a chat program for furries",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kety-folf/fluffchat.git"
+  },
+  "author": "kety-folf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kety-folf/fluffchat/issues"
+  },
+  "homepage": "https://github.com/kety-folf/fluffchat#readme",
+  "dependencies": {
+    "socket.io": "^3.1.1",
+    "typescript": "^4.1.5"
+  }
+}
