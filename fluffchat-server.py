@@ -4,7 +4,7 @@ from threading import Thread
 # server's IP address
 SERVER_HOST = "0.0.0.0"
 SERVER_PORT = 5002 # port we want to use
-separator_token = "<SEP>" #seperator token used in clients
+
 
 # initialize list/set of all connected client's sockets
 client_sockets = set()
@@ -23,20 +23,17 @@ def listen_for_client(cs):
     while True:
         try:
             # keep listening for a message from `cs` socket
-            msg = cs.recv(1024).decode()
+            msg = cs.recv(1024)#.decode()
         except Exception as e:
             # client no longer connected
             # remove it from the set
             print(f"[!] Error: {e}")
             client_sockets.remove(cs)
         else:
-            # if we received a message, replace the <SEP> 
-            # token with ": " to make it look better
-            msg = msg.replace(separator_token, ": ")
         # iterate over all connected sockets
-        for client_socket in client_sockets:
+            for client_socket in client_sockets:
             # send message to all clients
-            client_socket.send(msg.encode())
+             client_socket.send(msg)
 
 
 while True:
